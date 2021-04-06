@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MultiLayered_Encryptor_App {
-    public partial class Form1 : Form {
-        public Form1() {
+    public partial class App : Form {
+        public App() {
             InitializeComponent();
         }
+
 
         private void Form1_Load(object sender, EventArgs e) {
 

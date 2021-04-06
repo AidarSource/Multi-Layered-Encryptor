@@ -1,6 +1,6 @@
 ﻿
 namespace MultiLayered_Encryptor_App {
-    partial class Form1 {
+    partial class App {
         /// <summary>
         ///  Required designer variable.
         /// </summary>
