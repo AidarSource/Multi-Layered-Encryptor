@@ -8,5 +8,6 @@ Multiple encryption is the process of encrypting an already encrypted message on
 
 # Features
 
-128 bit encode with 100 algorithms
+128 bit encode with 100 algorithms.
+
 i can try to 256 bit . . . . butttt :D to encode 256 bit need big machine i think, i'll try it
