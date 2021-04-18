@@ -63,9 +63,9 @@ namespace MultiLayered_Encryptor_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap linux {
+        internal static System.Drawing.Bitmap mle {
             get {
-                object obj = ResourceManager.GetObject("linux", resourceCulture);
+                object obj = ResourceManager.GetObject("mle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
