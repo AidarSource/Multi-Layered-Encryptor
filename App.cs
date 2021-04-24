@@ -34,24 +34,25 @@ namespace MultiLayered_Encryptor_App {
         }
 
         private void button_Transform_Click(object sender, EventArgs e) {
-            // RSA-Asymmetric Encryption
-            if (comboBox_Algorithm.Text == "RSA-Asymmetric Encryption") {
+            // AES-Advanced Encryption Standard
+            if (comboBox_Algorithm.Text == "AES-Advanced Encryption Standard") {
                 if (comboBox_TypeToPerform.Text == "Encrypt") {
                     Stopwatch stopwatch = Stopwatch.StartNew();
                     label_ProcessTracker.Visible = true;
                     label_ProcessTracker.Text = "Processing . . .";
-                    CipherAlgorithms.plaintext = CipherAlgorithms.ByteConverter.GetBytes(textBox_InputText.Text);
-                    CipherAlgorithms.encryptedtext = CipherAlgorithms.Encryption(CipherAlgorithms.plaintext, CipherAlgorithms.RSA.ExportParameters(false), false);
-                    textBox_OutputText.Text = CipherAlgorithms.ByteConverter.GetString(CipherAlgorithms.encryptedtext);
+
+                    textBox_OutputText.Text = AES.EncryptString("b14ca58981434133bbce2ea2315a1916", textBox_InputText.Text);
+
+
                     stopwatch.Stop();
                     label_ProcessTracker.Text = String.Format("Completed in {0} seconds.", stopwatch.ElapsedMilliseconds / 1000.0);
-                    label_ProcessTracker.Text = CipherAlgorithms.key;
                 } else if(comboBox_TypeToPerform.Text == "Decrypt") {
                     Stopwatch stopwatch = Stopwatch.StartNew();
                     label_ProcessTracker.Visible = true;
                     label_ProcessTracker.Text = "Processing . . .";
-                    byte[] decryptedtext = CipherAlgorithms.Decryption(CipherAlgorithms.encryptedtext, CipherAlgorithms.RSA.ExportParameters(true), false);
-                    textBox_OutputText.Text = CipherAlgorithms.ByteConverter.GetString(decryptedtext);
+
+
+
                     stopwatch.Stop();
                     label_ProcessTracker.Text = String.Format("Completed in {0} seconds.", stopwatch.ElapsedMilliseconds / 1000.0);
                 }
