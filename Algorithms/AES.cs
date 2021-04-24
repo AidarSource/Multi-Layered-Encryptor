@@ -5,7 +5,7 @@ using System.Security.Cryptography;
 using System.IO;
 
 namespace MultiLayered_Encryptor_App {
-    // AES Algorithm
+    // AES-Advanced Encryption Standard
     class AES {
         public static string EncryptString(string key, string plainText) {
             byte[] iv = new byte[16];
