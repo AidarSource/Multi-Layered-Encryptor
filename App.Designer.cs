@@ -208,7 +208,7 @@ namespace MultiLayered_Encryptor_App {
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.label1.Location = new System.Drawing.Point(125, 331);
+            this.label1.Location = new System.Drawing.Point(103, 331);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(265, 24);
             this.label1.TabIndex = 19;
@@ -216,11 +216,11 @@ namespace MultiLayered_Encryptor_App {
             // 
             // textBox_KeyAfterEncrypt
             // 
-            this.textBox_KeyAfterEncrypt.Location = new System.Drawing.Point(396, 331);
+            this.textBox_KeyAfterEncrypt.Location = new System.Drawing.Point(374, 331);
             this.textBox_KeyAfterEncrypt.Multiline = true;
             this.textBox_KeyAfterEncrypt.Name = "textBox_KeyAfterEncrypt";
             this.textBox_KeyAfterEncrypt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_KeyAfterEncrypt.Size = new System.Drawing.Size(296, 24);
+            this.textBox_KeyAfterEncrypt.Size = new System.Drawing.Size(318, 24);
             this.textBox_KeyAfterEncrypt.TabIndex = 20;
             this.textBox_KeyAfterEncrypt.Text = "Text Box";
             // 

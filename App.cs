@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using MultiLayered_Encryptor_App.Algorithms;
+
 
 namespace MultiLayered_Encryptor_App {
     public partial class App : Form {
@@ -41,8 +43,10 @@ namespace MultiLayered_Encryptor_App {
                     label_ProcessTracker.Visible = true;
                     label_ProcessTracker.Text = "Processing . . .";
 
-                    textBox_OutputText.Text = AES.EncryptString("b14ca58981434133bbce2ea2315a1916", textBox_InputText.Text);
-
+                    string key = KeyGenerator.GetRandomAlphanumericString(10);
+                    //textBox_OutputText.Text = AES.EncryptString(key, textBox_InputText.Text);
+                    textBox_OutputText.Text = DES.EncryptData(textBox_InputText.Text, key);
+                    textBox_KeyAfterEncrypt.Text = key;
 
                     stopwatch.Stop();
                     label_ProcessTracker.Text = String.Format("Completed in {0} seconds.", stopwatch.ElapsedMilliseconds / 1000.0);
@@ -51,7 +55,8 @@ namespace MultiLayered_Encryptor_App {
                     label_ProcessTracker.Visible = true;
                     label_ProcessTracker.Text = "Processing . . .";
 
-
+                    //textBox_OutputText.Text = AES.DecryptString(textBox_KeyToDecrypt.Text, textBox_InputText.Text);
+                    textBox_OutputText.Text = DES.DecryptData(textBox_InputText.Text, textBox_KeyToDecrypt.Text);
 
                     stopwatch.Stop();
                     label_ProcessTracker.Text = String.Format("Completed in {0} seconds.", stopwatch.ElapsedMilliseconds / 1000.0);
