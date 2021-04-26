@@ -145,8 +145,7 @@ namespace MultiLayered_Encryptor_App {
             this.comboBox_Algorithm.FormattingEnabled = true;
             this.comboBox_Algorithm.Items.AddRange(new object[] {
             "AES-Advanced Encryption Standard",
-            "Multi-Layered Encryption",
-            "Rijindael"});
+            "Multi-Layered Encryption"});
             this.comboBox_Algorithm.Location = new System.Drawing.Point(468, 14);
             this.comboBox_Algorithm.Name = "comboBox_Algorithm";
             this.comboBox_Algorithm.Size = new System.Drawing.Size(224, 28);

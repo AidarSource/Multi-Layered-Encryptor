@@ -61,15 +61,13 @@ namespace MultiLayered_Encryptor_App {
                 }
             }
             // Rijindael Algorithm
-            if (comboBox_Algorithm.Text == "Rijindael") {
+            if (comboBox_Algorithm.Text == "") {
                 if (comboBox_TypeToPerform.Text == "Encrypt") {
                     Stopwatch stopwatch = Stopwatch.StartNew();
                     label_ProcessTracker.Visible = true;
                     label_ProcessTracker.Text = "Processing . . .";
 
-                    string key = KeyGenerator.GetRandomAlphanumericString(32);
-                    textBox_OutputText.Text = RijndaelAlgorithm.Encrypt(textBox_InputText.Text, key, "JU=JVGLSFSgN4=!-LW", "H2+_=S*QFA=P!Gu_");
-                    textBox_KeyAfterEncrypt.Text = key;
+
 
                     stopwatch.Stop();
                     label_ProcessTracker.Text = String.Format("Completed in {0} seconds.", stopwatch.ElapsedMilliseconds / 1000.0);
@@ -78,7 +76,7 @@ namespace MultiLayered_Encryptor_App {
                     label_ProcessTracker.Visible = true;
                     label_ProcessTracker.Text = "Processing . . .";
 
-                    textBox_OutputText.Text = RijndaelAlgorithm.Decrypt(textBox_InputText.Text, textBox_KeyToDecrypt.Text, "JU=JVGLSFSgN4=!-LW", "H2+_=S*QFA=P!Gu_");
+
 
                     stopwatch.Stop();
                     label_ProcessTracker.Text = String.Format("Completed in {0} seconds.", stopwatch.ElapsedMilliseconds / 1000.0);
