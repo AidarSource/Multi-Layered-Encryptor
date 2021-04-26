@@ -43,9 +43,8 @@ namespace MultiLayered_Encryptor_App {
                     label_ProcessTracker.Visible = true;
                     label_ProcessTracker.Text = "Processing . . .";
 
-                    string key = KeyGenerator.GetRandomAlphanumericString(10);
-                    //textBox_OutputText.Text = AES.EncryptString(key, textBox_InputText.Text);
-                    textBox_OutputText.Text = DES.EncryptData(textBox_InputText.Text, key);
+                    string key = KeyGenerator.GetRandomAlphanumericString(32);
+                    textBox_OutputText.Text = AES.EncryptString(key, textBox_InputText.Text);
                     textBox_KeyAfterEncrypt.Text = key;
 
                     stopwatch.Stop();
@@ -55,8 +54,31 @@ namespace MultiLayered_Encryptor_App {
                     label_ProcessTracker.Visible = true;
                     label_ProcessTracker.Text = "Processing . . .";
 
-                    //textBox_OutputText.Text = AES.DecryptString(textBox_KeyToDecrypt.Text, textBox_InputText.Text);
-                    textBox_OutputText.Text = DES.DecryptData(textBox_InputText.Text, textBox_KeyToDecrypt.Text);
+                    textBox_OutputText.Text = AES.DecryptString(textBox_KeyToDecrypt.Text, textBox_InputText.Text);
+                    
+                    stopwatch.Stop();
+                    label_ProcessTracker.Text = String.Format("Completed in {0} seconds.", stopwatch.ElapsedMilliseconds / 1000.0);
+                }
+            }
+            // Rijindael Algorithm
+            if (comboBox_Algorithm.Text == "Rijindael") {
+                if (comboBox_TypeToPerform.Text == "Encrypt") {
+                    Stopwatch stopwatch = Stopwatch.StartNew();
+                    label_ProcessTracker.Visible = true;
+                    label_ProcessTracker.Text = "Processing . . .";
+
+                    string key = KeyGenerator.GetRandomAlphanumericString(32);
+                    textBox_OutputText.Text = RijndaelAlgorithm.Encrypt(textBox_InputText.Text, key, "JU=JVGLSFSgN4=!-LW", "H2+_=S*QFA=P!Gu_");
+                    textBox_KeyAfterEncrypt.Text = key;
+
+                    stopwatch.Stop();
+                    label_ProcessTracker.Text = String.Format("Completed in {0} seconds.", stopwatch.ElapsedMilliseconds / 1000.0);
+                } else if (comboBox_TypeToPerform.Text == "Decrypt") {
+                    Stopwatch stopwatch = Stopwatch.StartNew();
+                    label_ProcessTracker.Visible = true;
+                    label_ProcessTracker.Text = "Processing . . .";
+
+                    textBox_OutputText.Text = RijndaelAlgorithm.Decrypt(textBox_InputText.Text, textBox_KeyToDecrypt.Text, "JU=JVGLSFSgN4=!-LW", "H2+_=S*QFA=P!Gu_");
 
                     stopwatch.Stop();
                     label_ProcessTracker.Text = String.Format("Completed in {0} seconds.", stopwatch.ElapsedMilliseconds / 1000.0);
